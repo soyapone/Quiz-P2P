@@ -26,7 +26,12 @@ build/Release
 # https://docs.npmjs.com/misc/faq#should-i-check-my-node-modules-folder-into-git
 node_modules
 
+
 # Lo que le añado por el proyecto
 quiz.sqlite
 .env
 leeme.txt
+.DS_Store
+npm-debug.log
+quiz.sqlite
+.env
