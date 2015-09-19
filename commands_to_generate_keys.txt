@@ -1,0 +1,11 @@
+:: Para crear los certificados hay que usar "openssl", que en mi caso está en el directorio C:\Util\cmder\vendor\msysgit\bin\
+:: Hay veces que "openssl.exe" devuelve el siguiente error "unable to load config info from /usr/local/ssl/openssl.cnf"
+:: Para resolverlo en Windows, hay que añadir una variable de entorno:
+:: set OPENSSL_CONF=C:\Util\cmder\vendor\msysgit\ssl\openssl.cnf
+
+
+md cert
+cd cert
+C:\Util\cmder\vendor\msysgit\bin\openssl.exe genrsa -out quiz-2015-key.pem 2048
+C:\Util\cmder\vendor\msysgit\bin\openssl.exe req -new -sha256 -key quiz-2015-key.pem -out quiz-2015-csr.pem
+C:\Util\cmder\vendor\msysgit\bin\openssl.exe x509 -req -in quiz-2015-csr.pem -signkey quiz-2015-key.pem -out quiz-2015-cert.pem
